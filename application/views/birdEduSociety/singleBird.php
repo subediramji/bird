@@ -18,7 +18,7 @@
         $content_summary = $allbirds->post_summary;?>   
        
             <img src="<?php echo base_url().'content/uploads/images/thumb_'.$image; ?>" alt="" width="400" class="img_inner fleft">
-            <h3><?php echo $title; ?></h3>
+<!--          <h3><?php //echo $title; ?></h3>-->
             <p><?php echo $content_summary; ?></p> 
            
      <?php } ?>

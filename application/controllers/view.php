@@ -116,12 +116,12 @@ public function index()
         }
          $data['noOfRecentPost'] = $this->viewmodel->recentpost_get_post($post);
         
-        $this->load->view('menuview/header',$data);
-        $this->load->view('menuview/menu',$data);
-        $this->load->view('menuview/event',$data);
-        $this->load->view('menuview/slider',$data);
-        $this->load->view('menuview/selectedPage',$data);
-        $this->load->view('menuview/footer',$data);  
+         $this->load->view('birdEduSociety/header',$data);
+         $this->load->view('birdEduSociety/pages',$data);
+       // $this->load->view('menuview/event',$data);
+       // $this->load->view('menuview/slider',$data);
+       // $this->load->view('menuview/selectedPage',$data);
+         $this->load->view('birdEduSociety/footer', $data);
         
     }
     
