@@ -25,7 +25,7 @@ foreach( $result as $abc)
     
         <div class="col-lg-3" style="width: 20%;float: left;margin: 1.5%;padding: 1%; outline: 1px solid #fff;">
             <a href="<?php echo base_url().'index.php/view/photo/'.$data->id;?>">
-            <h3><?php echo $data->album_name; ?></h3>
+            <h3 style="color: #100;padding: 2%;"><?php echo $data->album_name; ?></h3>
              <?php //echo anchor('view/photo/'.$data->id,$data->album_name); ?> 
             <img src="<?php echo base_url();?>content/uploads/images/<?php echo $abc->media_type; ?>"  />
         </div>
@@ -41,7 +41,7 @@ else
     
         <div class="col-lg-3" style="width: 20%;float: left;margin: 1.5%;padding: 1%; outline: 1px solid #fff;">
             <a href="<?php echo base_url().'index.php/view/photo/'.$data->id;?>">
-            <h3><?php echo $data->album_name; ?></h3>
+            <h3 style="color: #100;padding: 2%;"><?php echo $data->album_name; ?></h3>
              <?php //echo anchor('view/photo/'.$data->id,$data->album_name); ?> 
            <img src="<?php  echo base_url();?>content/uploads/images/iSjv5logo.jpg"  />
         </div>
