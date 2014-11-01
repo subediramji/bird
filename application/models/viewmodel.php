@@ -6,12 +6,14 @@ class Viewmodel extends CI_Model
     public function __construct() {
         $this->load->database();
     }
-   public function get_page($limit)
+   public function get_page($limit, $id)
     {
         foreach ($limit as $lim){
             $a= $lim->description;
         }
+        
       $this->db->from('page'); 
+      $this->db->where('id',$id);
        $this->db->limit($a);
        $this->db->order_by("id", "desc");
         $query = $this->db->get();

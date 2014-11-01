@@ -92,7 +92,7 @@ public function index()
         $limit['post_limit']=$this->viewmodel->get_max_post_to_show();
         $data['postquery'] = $this->viewmodel->get_post($limit["post_limit"]);
         $limit['page_limit']=$this->viewmodel->get_max_page_to_show();
-        $data['pagequery'] = $this->viewmodel->get_page($limit["page_limit"]);
+        $data['pagequery'] = $this->viewmodel->get_page($limit["page_limit"],$id);
         $data['slidequery'] = $this->viewmodel->get_slider();
         $data['headerquery']= $this->viewmodel->get_design_setup();
         $data['headertitle']= $this->viewmodel->get_header_title();
