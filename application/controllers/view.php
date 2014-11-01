@@ -320,7 +320,7 @@ public function index()
         
     }
     
-    public function photo($id)
+    public function photo($id=NULL)
     {
         $data['meta'] = $this->dbsetting->get_meta_data();
         $limit['post_limit']=$this->viewmodel->get_max_post_to_show();
@@ -335,7 +335,7 @@ public function index()
         $data['headerlogo']= $this->viewmodel->get_header_logo();
         $data['faviconicon']= $this->viewmodel->get_favicon_icon();
         $data['headerdescription']= $this->viewmodel->get_header_description();
-        $data['albumquery'] = $this->viewmodel->get_album();
+        $data['albumquery'] = $this->viewmodel->get_album_id($id);
         $data['gadget'] = $this->model1->get_gaget();                    //for all gadget
         $data['recentPost']= $this->model1->get_gaget_recentPost();   //for recent post gadget.
          foreach ($data['recentPost'] as $dat)

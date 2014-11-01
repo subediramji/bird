@@ -264,11 +264,18 @@ class Viewmodel extends CI_Model
         $query = $this->db->get();
         return $query->result();  
     }
+     public function get_album_id($id)
+    {  
+       $this->db->where('media_association_id',$id);
+           $query = $this->db->get('media');
+            return $query->result();
+    }
     
     function get_media_image($aid)
         {
                         
            $this->db->where('media_association_id',$aid);
+           $this->db->limit($limit=1);
            $query = $this->db->get('media');
             return $query->result();
         }

@@ -74,11 +74,9 @@
 	
 	
 </script>
+<div class="block" style="padding: 3% 5% 3% 5%;min-height: 400px;">
+ <?php if(!empty($selectedalbumquery)){ ?> 
 
-
-<?php
-if(isset($selectedalbumquery))
-{ ?>
     <div style="text-align: center;padding: 10px 0px 20px 0px;">
         <h1 style="color:#000;font-size: 30px;">Photos</h1>            
     </div>
@@ -100,13 +98,12 @@ foreach ($selectedalbumquery as $data) {
 </div> 
 <?php
 }
-}
-else
-{  ?>
-<div class="xyz" style="width:200px; height:150px; float:left; margin-right:5px;">
- <p>No any photos found</p>   
- </div>
- <?php }
+
+
+ }
+ else{
+      echo '<div style="text-align: center; font-size:55px;color:red;"><h1 style="color:red;"> Sorry ! No photos are available to show.</h1></div>';
+ }
 ?>
 <div id="popup_box">	<!-- OUR PopupBox DIV-->
 <img  src="" width="500px" height="400px" id="pqr"  />
