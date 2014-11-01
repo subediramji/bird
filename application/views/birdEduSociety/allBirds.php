@@ -14,7 +14,8 @@
           $title = $allbirds->post_title;
         $image = $allbirds->image;
         $content_summary = $allbirds->post_summary;?>   
-        <a href="<?php echo base_url().'index.php/view/bird/'.$id; ?>"><div class="col-lg-3" style="width: 20%;float: left;margin: 1.5%;padding: 1%; min-height: 280px;outline: 1px solid #fff;">
+        <a href="<?php echo base_url().'index.php/view/bird/'.$id; ?>">
+            <div class="col-lg-3" style="width: 20%;float: left;margin: 1.5%;padding: 1%; min-height: 280px;outline: 1px solid #fff;">
             <img src="<?php echo base_url().'content/uploads/images/thumb_'.$image; ?>" alt="" width="300" class="img_inner fleft">
             <h3><?php echo $title; ?></h3>
             <p><?php echo $content_summary; ?></p> 

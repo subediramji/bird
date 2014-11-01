@@ -291,7 +291,7 @@ public function index()
        $limit['post_limit']=$this->viewmodel->get_max_post_to_show();
         $data['postquery'] = $this->viewmodel->get_post($limit["post_limit"]);
         $limit['page_limit']=$this->viewmodel->get_max_page_to_show();
-        $data['pagequery'] = $this->viewmodel->get_page($limit["page_limit"]);
+       // $data['pagequery'] = $this->viewmodel->get_page($limit["page_limit"],$id);
         $data['slidequery'] = $this->viewmodel->get_slider();
         $data['headerquery']= $this->viewmodel->get_design_setup();
         $data['headertitle']= $this->viewmodel->get_header_title();
@@ -311,12 +311,12 @@ public function index()
         }
         $data['noOfRecentPost'] = $this->viewmodel->recentpost_get_post($post);
         
-        $this->load->view('menuview/header',$data);
-        $this->load->view('menuview/menu',$data);
-        $this->load->view('menuview/event',$data);
-        $this->load->view('menuview/slider',$data);
-        $this->load->view('menuview/album',$data);
-        $this->load->view('menuview/footer',$data);  
+        $this->load->view('birdEduSociety/header',$data);
+       // $this->load->view('menuview/menu',$data);
+       // $this->load->view('menuview/event',$data);
+       // $this->load->view('menuview/slider',$data);
+        $this->load->view('birdEduSociety/album',$data);
+        $this->load->view('birdEduSociety/footer',$data);  
         
     }
     
@@ -326,7 +326,7 @@ public function index()
         $limit['post_limit']=$this->viewmodel->get_max_post_to_show();
         $data['postquery'] = $this->viewmodel->get_post($limit["post_limit"]);
         $limit['page_limit']=$this->viewmodel->get_max_page_to_show();
-        $data['pagequery'] = $this->viewmodel->get_page($limit["page_limit"]);
+        //$data['pagequery'] = $this->viewmodel->get_page($limit["page_limit"]);
         $data['slidequery'] = $this->viewmodel->get_slider();
         $data['headerquery']= $this->viewmodel->get_design_setup();
         $data['headertitle']= $this->viewmodel->get_header_title();
@@ -349,12 +349,12 @@ public function index()
         $data['selectedalbumquery'] =  $this->viewmodel->get_selected_album($id);
         
         
-        $this->load->view('menuview/header',$data);
-        $this->load->view('menuview/menu',$data);
-        $this->load->view('menuview/event',$data);
-        $this->load->view('menuview/slider',$data);
-        $this->load->view('menuview/photos',$data);
-        $this->load->view('menuview/footer',$data);  
+        $this->load->view('birdEduSociety/header',$data);
+        //$this->load->view('menuview/menu',$data);
+       // $this->load->view('menuview/event',$data);
+       // $this->load->view('menuview/slider',$data);
+        $this->load->view('birdEduSociety/photos',$data);
+        $this->load->view('birdEduSociety/footer',$data);  
         
     }
     public function addcomment()
