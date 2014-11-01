@@ -43,7 +43,7 @@ else
             <a href="<?php echo base_url().'index.php/view/photo/'.$data->id;?>">
             <h3><?php echo $data->album_name; ?></h3>
              <?php //echo anchor('view/photo/'.$data->id,$data->album_name); ?> 
-<!--            <img src="<?php // echo base_url();?>content/uploads/images/<?php echo $abc->media_type; ?>"  />-->
+           <img src="<?php  echo base_url();?>content/uploads/images/iSjv5logo.jpg"  />
         </div>
 </div> 
  <?php    

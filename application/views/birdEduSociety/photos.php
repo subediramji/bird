@@ -90,7 +90,7 @@ foreach ($selectedalbumquery as $data) {
    
     
  <div class="col-lg-3" style="width: 20%;float: left;margin: 1.5%;padding: 1%;min-height: 180px; outline: 1px solid #fff;">
-    <img src="<?php echo base_url(); ?>content/uploads/images/<?php echo $data->media_type; //echo $image; ?>"  />
+    <img class="srcimage" src="<?php echo base_url(); ?>content/uploads/images/<?php echo $data->media_type; ?>"  />
 <!--        <div id="imagetitle"> <?php //echo $data->media_name; ?> 
             
         </div>-->
@@ -105,8 +105,8 @@ foreach ($selectedalbumquery as $data) {
       echo '<div style="text-align: center; font-size:55px;color:red;"><h1 style="color:red;"> Sorry ! No photos are available to show.</h1></div>';
  }
 ?>
-<div id="popup_box">	<!-- OUR PopupBox DIV-->
-<img  src="" width="500px" height="400px" id="pqr"  />
+    <div id="popup_box" style="z-index: 10000;">	<!-- OUR PopupBox DIV-->
+<img  src="" width="500px"  id="pqr"  />
  <a id="popupBoxClose">Close</a>	
 </div>
 <div class="clear"></div>
