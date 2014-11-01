@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="<?php echo base_url().'content/uploads/styles/reset.css'; ?>">
 <link rel="stylesheet" href="<?php echo base_url().'content/uploads/styles/superfish.css'; ?>">
      <link rel="stylesheet" href="<?php echo base_url().'content/uploads/styles/slider.css'; ?>">
+      <link rel="stylesheet" href="<?php echo base_url().'content/uploads/styles/custom.css'; ?>">
      
      <script src="<?php echo base_url().'content/uploads/scripts/jquery.js'; ?>"></script>
      <script src="<?php echo base_url().'content/uploads/scripts/jquery-migrate-1.1.1.js'; ?>"></script>
@@ -111,23 +112,46 @@ height: 'auto',
         } ?>
         <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url().'content/uploads/images/'.$hlogo; ?>" style="width: 80px; float: left;"alt="Bird education society"></a> <h1 style="float: left; padding-top: 27px;"><?php echo $htitle; ?> </h1>
          <div class="menu_block">
-           <nav  class="" >
-            <ul class="sf-menu">
-                   <li class="current"><a href="#">Home</a></li>
-                   <li class="with_ul"><a href="#">About Us </a>
-                     <ul>
-                         <li><a href="#"> Testimonials</a></li>
-                         <li><a href="#">Archive</a></li>
-                     </ul>
-                   </li>
-                   <li><a href="#">Services</a></li>
-                   <li><a href="#">Blog</a></li>
-                   <li><a href="<?php echo base_url().'index.php/view/contactUs'; ?>">Contacts </a></li>
-                 </ul>
+           <nav  class="nav" >
+            <ul class="nav-list">        
+                    <?php
+
+            $this->load->helper('testnav_helper');
+
+            fetch_menu (query(0));
+
+
+        ?>   
+                    
+            </ul>
               </nav>
-           <div class="clear"></div>
+             
            </div>
            <div class="clear"></div>
       </div>
     </div>
 </header>
+<script>
+;(function($) {
+	$(function() {
+
+		$('.nav').append($('<div class="nav-mobile"></div>'));
+
+		$('.nav-item').has('ul').prepend('<span class="nav-click"><i class="nav-arrow"></i></span>');
+
+		$('.nav-mobile').click(function(){
+			$('.nav-list').toggle();
+		});
+
+		$('.nav-list').on('click', '.nav-click', function(){
+
+			$(this).siblings('.nav-submenu').toggle();
+
+			$(this).children('.nav-arrow').toggleClass('nav-rotate');
+			
+		});
+	    
+	});
+	
+})(jQuery);
+</script>

@@ -109,9 +109,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     <div class="alert alert-success">
 
-        <a href="#" class="close" data-dismiss="alert">&times;</a>
-
-       
+        <a href="#" class="close" data-dismiss="alert">&times;</a>  
 
     </div>
 
