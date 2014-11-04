@@ -85,16 +85,25 @@ class Subscribers extends CI_Controller {
     
      public function addFeedback()
     {
+        
+        if(isset($_POST['name']))
+        {
+            $name = $_POST['name'];
+        }
         if(isset($_POST['email']))
         {
             $email = $_POST['email'];
         }
-         if(isset($_POST['remarks']))
+        if(isset($_POST['phone']))
         {
-            $remark = $_POST['remarks'];
+            $phone = $_POST['phone'];
+        }
+         if(isset($_POST['message']))
+        {
+            $message = $_POST['message'];
         }
         $type="feedback";
-        $this->contact_model->add_new_contact_feedback($email, $remark, $type);
+        $this->contact_model->add_new_contact_feedback($name, $email, $message, $type);
         echo "Thank you for your feedback";
     }
     

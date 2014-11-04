@@ -103,7 +103,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <?php if($form =="showForm"){ ?>
      <div class="grid_5 prefix_1">
        <h2 class="ic1">Contact Form</h2>
-       <?php $attributes = array('id' => 'form'); echo form_open_multipart('email/send', $attributes); ?>
+       <?php $attributes = array('id' => 'form'); echo form_open_multipart('subscribers/addFeedback', $attributes); ?>
 
        <div class="success_wrapper">
        <div class="success">Contact form submitted!<br>

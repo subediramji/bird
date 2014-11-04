@@ -1,4 +1,5 @@
 //forms
+var base_url = "http://localhost/birdEduSociety/";
 ;(function($){
 	$.fn.forms=function(o){
 		return this.each(function(){
@@ -10,7 +11,7 @@
 					notRequiredCl:'notRequired',
 					successCl:'success',
 					successShow:'4000',
-					mailHandlerURL:'bat/MailHandler.php',
+					mailHandlerURL:base_url + "index.php/subscribers/addFeedback",
 					ownerEmail:'support@template-help.com',
 					stripHTML:true,
 					smtpMailServer:'localhost',
@@ -99,6 +100,7 @@
 						_.validateFu(_.labels)							
 						if(!_.form.has('.'+_.invalidCl).length)
 							$.ajax({
+                                                           
 								type: "POST",
 								url:_.mailHandlerURL,
 								data:{
@@ -111,8 +113,8 @@
 									owner_email:_.ownerEmail,
 									stripHTML:_.stripHTML
 								},
-								success: function(){
-									_.showFu()
+								success: function(msgs){
+									alert(msgs);
 								}
 							})			
 					},
