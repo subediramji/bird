@@ -114,7 +114,9 @@ var base_url = "http://localhost/birdEduSociety/";
 									stripHTML:_.stripHTML
 								},
 								success: function(msgs){
-									alert(msgs);
+									$('.alert').css({"display":"block"});  
+                                                                        $('.alert').html(msgs);
+                                                                        $('#form').css({"display":"none"}); 
 								}
 							})			
 					},

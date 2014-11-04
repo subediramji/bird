@@ -104,7 +104,7 @@ class Subscribers extends CI_Controller {
         }
         $type="feedback";
         $this->contact_model->add_new_contact_feedback($name, $email, $message, $type);
-        echo "Thank you for your feedback";
+        echo "<strong>Success!</strong> Your message has been sent successfully.";
     }
     
     

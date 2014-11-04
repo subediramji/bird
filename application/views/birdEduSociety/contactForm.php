@@ -1,5 +1,20 @@
  <link rel="stylesheet" href="<?php echo base_url().'content/uploads/styles/form.css'; ?>">
  <script src="<?php echo base_url().'content/uploads/scripts/forms.js'; ?>"></script>
+ <style>
+     .alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
+}
+.alert {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 15px;
+    display: none;
+}
+     
+ </style>
  <?php if(!empty($contact)){
      foreach($contact as $cinfo){
          $name = $cinfo->name;
@@ -74,19 +89,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <!class full is closed here>
 
 
-
-
-
-
-
-
-
-
-
- 
-
-
-
           </figure> <?php } ?>
               <address>
                             <dl>
@@ -103,6 +105,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <?php if($form =="showForm"){ ?>
      <div class="grid_5 prefix_1">
        <h2 class="ic1">Contact Form</h2>
+       
+
+    <div class="alert alert-success">
+
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+
+       
+
+    </div>
+
+
        <?php $attributes = array('id' => 'form'); echo form_open_multipart('subscribers/addFeedback', $attributes); ?>
 
        <div class="success_wrapper">
