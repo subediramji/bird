@@ -1,4 +1,26 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 04, 2014 at 10:59 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `bird_edu`
+--
+CREATE DATABASE IF NOT EXISTS `bird_edu` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `bird_edu`;
 
 -- --------------------------------------------------------
 
@@ -10,7 +32,14 @@ CREATE TABLE IF NOT EXISTS `album` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `album_name` varchar(100) NOT NULL DEFAULT 'Required',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `album`
+--
+
+INSERT INTO `album` (`id`, `album_name`) VALUES
+(1, 'Birds');
 
 -- --------------------------------------------------------
 
@@ -83,7 +112,18 @@ CREATE TABLE IF NOT EXISTS `contact_list` (
   `remarks` varchar(1000) DEFAULT NULL,
   `type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `contact_list`
+--
+
+INSERT INTO `contact_list` (`id`, `full_name`, `email`, `remarks`, `type`) VALUES
+(1, NULL, 'asd@asd.asd', NULL, 'feedback'),
+(2, NULL, 'asd@asd.asd', NULL, 'feedback'),
+(3, NULL, 'sdygfysdg@asd.asd', NULL, 'feedback'),
+(4, 'Ramji Subedi', 'rsubedi@salyani.com.np', 'vdsahgfgvhjsdghf hsvdhjfghsd bsdvjhfghsd cool this is pro site', 'feedback'),
+(5, 'hom nath bagale', 'bhomnath@salyani.com.np', 'gdhf well this site is made pro', 'feedback');
 
 -- --------------------------------------------------------
 
@@ -127,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `type` varchar(255) NOT NULL,
   `align` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `events`
@@ -135,7 +175,8 @@ CREATE TABLE IF NOT EXISTS `events` (
 
 INSERT INTO `events` (`id`, `title`, `details`, `location`, `date`, `image`, `type`, `align`) VALUES
 (1, 'Site launch', 'jkdshf sdbhf hbdshjf bdshjfsd hsdhjfh hsdbjfhs hsdhjifhsd hsdjfs hsdbjf<br>', '', '2014-11-04 18:15:00', 'XBuY91.jpg', 'news', ''),
-(2, 'next news', 'hdskjhf7g sjdghjfhsd hfdshkjfhsd sdhiufhsd hsdhifhsd jsdhifhsd sdhifhsd hhsdijfhids hsfdf<br>', '', '2014-11-09 18:15:00', 'iSjv5logo.JPG', 'news', '');
+(2, 'next news', '      hdskjhf7g sjdghjfhsd hfdshkjfhsd sdhiufhsd hsdhifhsd jsdhifhsd sdhifhsd hhsdijfhids hsfdf<br>', 'gshfsdjh', '2014-11-09 18:15:00', 'iSjv5logo.JPG', 'event', ''),
+(4, 'lets see what happens if long content is shown', 'dgsyufguyds dshgfhgsduysf sdghfgdsgf fdbhjgfdhx dfbgfhsdhjhbvdf fedjkghfvdjxcbf cnxbjkfbdskjg vdfncbxkjgvhdfjcx gvdfbcxkjgvbdfkjcx gvjfdcxkjgvdfkjcx fdbcxgkjvdfkjkcx gvdfcxkjgvbdfjcx gvdfncxjgbvjfkdcx gvdjhfbcxkjgvhndfjkcx gvdfbncxkjgbvdfc xgvbdfkcjbgfvfed cgbfvckdsbkjfc dsxbgfkjsdbxjgf vcdsxjfbdsjxbfhcdx jfbcsdbjfber dsgfbehrjdsbfjerds ghbvkjdsbjgfds dsbfijuerds fvdfbsjgbfrsd gvbsdrfjbgfkjreds herwbdskjfbsd gfsdbjfjbds gfbdsjkfbkjsd fbdskjgfbkjds sdfbkjgfbdskjgf sbdkjfbkjredsg dsfbjkgfbrdg dsbk', '', '2014-11-03 18:15:00', NULL, 'event', '');
 
 -- --------------------------------------------------------
 
@@ -178,7 +219,15 @@ CREATE TABLE IF NOT EXISTS `media` (
   `media_link` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_media` (`media_association_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `media`
+--
+
+INSERT INTO `media` (`id`, `media_name`, `media_type`, `media_association_id`, `media_link`) VALUES
+(1, 'shdjgfjs dsvfjh', 'SFB6Iimage7.jpg', 1, '0'),
+(2, 'second', 'VsmUDimage6.jpg', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -305,14 +354,11 @@ CREATE TABLE IF NOT EXISTS `navigation` (
 --
 
 INSERT INTO `navigation` (`id`, `navigation_name`, `navigation_link`, `parent_id`, `navigation_type`, `navigation_slug`, `menu_id`) VALUES
-(75, 'Home', 'http://localhost/bcdNepal/', 0, '', 'Home', 4),
-(76, 'Contact Us', 'http://localhost/bcdNepal/index.php/view/contact', 0, '', 'ContactUs', 4),
+(75, 'Home', 'http://localhost/birdEduSociety/', 0, '', 'Home', 4),
+(76, 'Contact Us', 'http://localhost/birdEduSociety/index.php/view/contactUs', 0, '', 'ContactUs', 4),
 (77, 'About Us', '#', 0, '', 'AboutUs', 4),
-(78, 'Members', 'http://localhost/bcdNepal/index.php/view/members', 0, '', 'Members', 4),
-(84, 'Gallery', 'http://localhost/bcdNepal/index.php/view/photos', 0, '', 'Gallery', 4),
-(85, 'What do we do', 'http://localhost/bcdNepal/index.php/view/page/37', 77, 'page', 'Whatdowedo', 4),
-(86, 'Ways to help', 'http://localhost/bcdNepal/index.php/view/page/38', 77, 'page', 'Waystohelp', 4),
-(87, 'Support ', 'http://localhost/bcdNepal/index.php/view/page/39', 77, 'page', 'Support', 4);
+(78, 'Members', 'http://localhost/birdEduSociety/index.php/view/members', 0, '', 'Members', 4),
+(84, 'Gallery', 'http://localhost/birdEduSociety/index.php/view/photos', 0, '', 'Gallery', 4);
 
 -- --------------------------------------------------------
 
@@ -337,7 +383,15 @@ CREATE TABLE IF NOT EXISTS `page` (
   `allow_like` tinyint(1) NOT NULL,
   `allow_share` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `page`
+--
+
+INSERT INTO `page` (`id`, `page_name`, `page_content`, `page_author_id`, `page_date`, `page_summary`, `page_status`, `page_modifed_date`, `page_parent`, `page_order`, `page_type`, `page_tags`, `allow_comment`, `allow_like`, `allow_share`) VALUES
+(1, 'Introduction', 'Hi everybosy bgdfjhb sbdjhfhkjds asjhjkhdfs djhafkjhds bsdjkhfkjs bdsjkfhksjd nsdbjkfhkjds sdbnjkfhskd naskdhkjs nbdskjfbjds sdbjkfbsdkj dbsjkfbskjd sdbkjfnsdk dsbfkjdsj dbskjfsdjk dsbkjfbds jsnjkfhsd nsabjkfbsdkj ajbaskjfbsd ssbkjfbhsdkj fdjsbfkjds dsbkjfs fdsbkjfnds fjkbds fdsbkjfds fjdsbkjfbs fnsbkjf sdjhfbcdsjfdshfbkjsdf sdbkjfhds fkjsdhkjfcs<br>', 10, '2014-11-04 06:34:36', 'Hi everybosy bgdfjhb sbdjhfhkjds asjhjkhdfs djhafkjhds bsdjkhfkjs bdsjkfhksjd nsdbjkfhkjds sdbnjkfhs', '0', '0000-00-00 00:00:00', 0, 0, '0', '0', 0, 0, 0),
+(2, 'dsgjhfd bvdsjhgfds sfgdjhfgb', 'dsdjhgfhd dsgifhdsiu jdsbihfids jhdsbgifsd bdsfhids hsdbgifhsd dsbgifhds jdsbfsd bdshfsd hsdbhfds hbdsjihfsd hbdsjfbhsd hsdbkjfsd hsdbjfs hjdbskjfds jbvdshjfsd hbvdhsjf sdbfvjhdsf dsjhbvhfjsd jhdsbjfhds hsdbjfds jhdsbfjkhsd jhsdbfjhds jdshbfjhsd jsdbjhfsd jdsfbdhsj dsbfjhds jhdsjhfvjhds dsjbvfjhdsjhf sjdbfjhvdsjhfd <br>', 10, '2014-11-04 06:36:42', 'dsdjhgfhd dsgifhdsiu jdsbihfids jhdsbgifsd bdsfhids hsdbgifhsd dsbgifhds jdsbfsd bdshfsd hsdbhfds hb', '0', '0000-00-00 00:00:00', 0, 0, '0', '0', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -364,7 +418,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   PRIMARY KEY (`id`),
   KEY `idx_post` (`post_category`),
   KEY `idx_post_0` (`post_author_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
 -- Dumping data for table `post`
@@ -386,7 +440,9 @@ INSERT INTO `post` (`id`, `post_title`, `post_author_id`, `post_date`, `post_sum
 (35, 'another post', 0, '2014-11-03 08:47:22', 'shgfhs bdsvhfjgd dsgbjfhhsd hasjifhisad hsajkhdas basjkdhjsa asjkdhkas haskjdhkas sakjdh<br>', '0', NULL, NULL, NULL, 'shgfhs bdsvhfjgd dsgbjfhhsd hasjifhisad hsajkhdas basjkdhjsa asjkdhkas haskjdhkas sakjdh<br>', 1, 0, 0, 0, 'vMhz1birdedu.png'),
 (36, 'sdfihsd sdbjhfgbsd bdshjf', 0, '2014-11-03 08:48:57', 'dskjdhfjds hasbbjhdhasj hashjkdhas basjhdba<br>', '0', NULL, NULL, NULL, 'dskjdhfjds hasbbjhdhasj hashjkdhas basjhdba<br>', 1, 0, 0, 0, 'uxrZH1.jpg'),
 (37, 'dsgjhfds hdsjkfhkjs', 0, '2014-11-03 08:49:20', 'jjshdjfkhhd sdjhfkjsd sdkjhfjksdh<br>', '0', NULL, NULL, NULL, 'jjshdjfkhhd sdjhfkjsd sdkjhfjksdh<br>', 1, 0, 0, 0, 'N2jpot.png'),
-(38, 'sdgds shdjgfjhds asvhja', 0, '2014-11-03 10:12:35', 'shkjdhfjksd bbsadjhfhbkjds dskjfhkdsj sakjdlkas skjdhas bsdkjbfdsaj basbdaskj asbjdbas bsajdba baskj', '0', NULL, NULL, NULL, 'shkjdhfjksd bbsadjhfhbkjds dskjfhkdsj sakjdlkas skjdhas bsdkjbfdsaj basbdaskj asbjdbas bsajdba baskjdnbkj bsajkbdsa asbjkdba bsajkbds sbajkbdaks sabjkdbask basjdba basjkdbd bas contents should be cut off<br>', 1, 0, 0, 0, 'bIr6gf.png');
+(38, 'sdgds shdjgfjhds asvhja', 0, '2014-11-03 10:12:35', 'shkjdhfjksd bbsadjhfhbkjds dskjfhkdsj sakjdlkas skjdhas bsdkjbfdsaj basbdaskj asbjdbas bsajdba baskj', '0', NULL, NULL, NULL, 'shkjdhfjksd bbsadjhfhbkjds dskjfhkdsj sakjdlkas skjdhas bsdkjbfdsaj basbdaskj asbjdbas bsajdba baskjdnbkj bsajkbdsa asbjkdba bsajkbds sbajkbdaks sabjkdbask basjdba basjkdbd bas contents should be cut off<br>', 1, 0, 0, 0, 'bIr6gf.png'),
+(39, 'ramji', 0, '2014-11-04 07:38:52', 'bdsjhfgsjhdsfdbjh<br>', '0', NULL, NULL, NULL, 'bdsjhfgsjhdsfdbjh<br>', 1, 0, 0, 0, 'tBdRTimage3.jpg'),
+(40, 'second', 0, '2014-11-04 07:39:17', '      jsdigjhfiodg bfdjhkbejfds gfdbjhgghfdsj dsfbjhfdshbas jasbjhfbhdjsbf sdjbfjsdhf sdbfjdshf sdjh', '0', NULL, NULL, NULL, '      jsdigjhfiodg bfdjhkbejfds gfdbjhgghfdsj dsfbjhfdshbas jasbjhfbhdjsbf sdjbfjsdhf sdbfjdshf sdjhbfjsdhf csdjhbfjsdhjxf sdbfjsdhf dsfbdjishf sfhidshfhsd sdjhbfsd hdsbfhds fhjdsbhfbds jhsdbhfbdjs fjsdbbjhfds fsdjh dsjhfbdhsfsd&nbsp; jdsbhfsd fdshjfbbsd sfd bfjhdsb ffsdhbfhjdsb fdshjbfhbsbdh fsd fhsdbhfds hffbdsjhfds hfbdjhsf sdhjfbsdjhbfjsc jhdsbfhcsdbfbsd sdfbhsdbfb&nbsp; jzbfhsdbfjh sd fhjdsbhfsd hfbsdjhf chdsbfhcbsdhxzf chdbshfcbhdsbfhcbh hvbchdsbhsdbhf chdsbhfcsdbhjfbdsh fhcbsdhfsdbhfbdhs hsdbfhbsdjhfsd hsdbfhsd bfbsdhf bdshfhsd fhsdbhfbdshbfshdj fhcsdbhdsjh fhdsbfhbdshjbfsd ruewhewrh<br>', 1, 0, 0, 0, 'egKBVimage15.jpg');
 
 -- --------------------------------------------------------
 
