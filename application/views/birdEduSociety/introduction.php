@@ -18,7 +18,7 @@
      </div>
        <?php }?>
     <!-- for news -->  
-       <?php //if(!empty($news)){ ?>
+       <?php if(!empty($news)){ ?>
      <div class="grid_5 prefix_1">
          
        <h2 class="ic1">Latest News</h2>
@@ -46,6 +46,6 @@
        </ul>
        <a href="<?php echo base_url().'index.php/view/news'; ?>" class="btn">More</a>
      </div>
-       <?php// } ?>
+       <?php } ?>
    </div>
  </div>
