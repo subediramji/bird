@@ -7,6 +7,7 @@ class view extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('viewmodel');
         $this->load->model('dbmodel');
+        $this->load->model('contact_model');
         $this->load->model('dbsetting');
         $this->load->model('model1');
     }
@@ -61,8 +62,9 @@ public function index()
     $data['gadget'] = $this->model1->get_gaget();  
     $data['headertitle']= $this->viewmodel->get_header_title();
     $data['headerlogo']= $this->viewmodel->get_header_logo(); 
+     $data['contact'] = $this->contact_model->get_contact_form();
       $this->load->view('birdEduSociety/header',$data);
-        $this->load->view('birdEduSociety/contactForm');       
+        $this->load->view('birdEduSociety/contactForm', $data);       
        
        $this->load->view('birdEduSociety/footer', $data);
     }
