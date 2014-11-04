@@ -355,7 +355,6 @@ public function index() {
             foreach ($data['query'] as $a) {
                 $img = $a->image;
             }
-             die($img);
             if ($img == !NULL) {
                 unlink('./content/uploads/images/' . $img);
                 unlink('./content/uploads/images/thumb_' . $img);
