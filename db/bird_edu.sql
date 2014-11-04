@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 31, 2014 at 10:38 AM
+-- Generation Time: Nov 03, 2014 at 11:33 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `album` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `album_name` varchar(100) NOT NULL DEFAULT 'Required',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -44,7 +44,14 @@ CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(100) NOT NULL DEFAULT 'Required',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `category_name`) VALUES
+(1, 'Birds');
 
 -- --------------------------------------------------------
 
@@ -119,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `design_setup` (
 
 INSERT INTO `design_setup` (`id`, `name`, `description`) VALUES
 (0, 'header_title', 'Bird Education Society'),
-(1, 'header_logo', 'birdedu.png'),
+(1, 'header_logo', 'birdedu1.png'),
 (2, 'header_description', ''),
 (3, 'header_bgcolor', NULL),
 (4, 'sidebar_title', 'Quick navigation'),
@@ -142,7 +149,15 @@ CREATE TABLE IF NOT EXISTS `events` (
   `type` varchar(255) NOT NULL,
   `align` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `details`, `location`, `date`, `image`, `type`, `align`) VALUES
+(1, 'Site launch', 'jkdshf sdbhf hbdshjf bdshjfsd hsdhjfh hsdbjfhs hsdhjifhsd hsdjfs hsdbjf<br>', '', '2014-11-04 18:15:00', 'XBuY91.jpg', 'news', ''),
+(2, 'next news', 'hdskjhf7g sjdghjfhsd hfdshkjfhsd sdhiufhsd hsdhifhsd jsdhifhsd sdhifhsd hhsdijfhids hsfdf<br>', '', '2014-11-09 18:15:00', 'iSjv5logo.JPG', 'news', '');
 
 -- --------------------------------------------------------
 
@@ -159,16 +174,17 @@ CREATE TABLE IF NOT EXISTS `gadgets` (
   `display` varchar(200) NOT NULL,
   `setting` text NOT NULL,
   PRIMARY KEY (`gadget_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=227 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=228 ;
 
 --
 -- Dumping data for table `gadgets`
 --
 
 INSERT INTO `gadgets` (`gadget_id`, `name`, `textBox`, `defaultGadget`, `type`, `display`, `setting`) VALUES
-(226, 'Social Network', 'textBox', '', 'Facebook<br>\r\nTwitter<br>\r\nLinkid<br>\r\nYoutube<br>\r\n', 'Footer', ''),
+(226, 'Site Map', 'textBox', '', '<a href="#">Home</a><br/>\r\n<a href="#">About</a><br/>\r\n<a href="#">Birds</a><br/>\r\n<a href="#">Gallery</a><br/>\r\n<a href="#">Mission</a><br/>\r\n<a href="#">Vision</a><br/>', 'Footer', ''),
 (225, 'Recent Post', '', 'recent post', '', 'Sidebar', 'post=3&titleBold=&titleUnderline=&titleColor='),
-(224, '<b>Tihar Offer!!!</b>', 'textBox', '', '10% Discount in all the product you buy. Hurry your shopping.', 'Header', '');
+(224, '<b>Tihar Offer!!!</b>', 'textBox', '', '10% Discount in all the product you buy. Hurry your shopping.', 'Header', ''),
+(227, 'Quick Links', 'textBox', '', '<a href="#">Chitwan National Park</a><br/>\r\n<a href="#">About</a><br/>\r\n<a href="#">Birds</a><br/>\r\n<a href="#">Gallery</a><br/>\r\n<a href="#">Mission</a><br/>\r\n<a href="#">Vision</a><br/>', 'Footer', '');
 
 -- --------------------------------------------------------
 
@@ -184,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `media` (
   `media_link` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_media` (`media_association_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -304,7 +320,7 @@ CREATE TABLE IF NOT EXISTS `navigation` (
   `menu_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idx_navigation` (`menu_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=89 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=88 ;
 
 --
 -- Dumping data for table `navigation`
@@ -343,7 +359,7 @@ CREATE TABLE IF NOT EXISTS `page` (
   `allow_like` tinyint(1) NOT NULL,
   `allow_share` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -370,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   PRIMARY KEY (`id`),
   KEY `idx_post` (`post_category`),
   KEY `idx_post_0` (`post_author_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
 
 --
 -- Dumping data for table `post`
@@ -387,7 +403,12 @@ INSERT INTO `post` (`id`, `post_title`, `post_author_id`, `post_date`, `post_sum
 (30, 'Health & Sanitation', 0, '2014-10-17 08:34:22', '<br>', '0', NULL, NULL, NULL, '<br>', 12, 0, 0, 0, 'sanitation1.jpg'),
 (31, 'Environment', 0, '2014-10-17 08:34:44', '<br>', '0', NULL, NULL, NULL, '<br>', 12, 0, 0, 0, 'environment1.jpg'),
 (32, 'Training', 0, '2014-10-17 08:35:03', '<br>', '0', NULL, NULL, NULL, '<br>', 12, 0, 0, 0, 'training1.jpg'),
-(33, 'Awareness', 0, '2014-10-17 08:38:34', '<br>', '0', NULL, NULL, NULL, '<br>', 12, 0, 0, 0, 'education111.jpg');
+(33, 'Awareness', 0, '2014-10-17 08:38:34', '<br>', '0', NULL, NULL, NULL, '<br>', 12, 0, 0, 0, 'education111.jpg'),
+(34, 'new bird', 0, '2014-11-03 08:35:07', 'dffd dfdsfhfkjsdhdkjf sdbkjfhsd sdbjfkbsd sdbxjkfsd<br>', '0', NULL, NULL, NULL, 'dffd dfdsfhfkjsdhdkjf sdbkjfhsd sdbjfkbsd sdbxjkfsd<br>', 1, 0, 0, 0, 'aPBjS1.jpg'),
+(35, 'another post', 0, '2014-11-03 08:47:22', 'shgfhs bdsvhfjgd dsgbjfhhsd hasjifhisad hsajkhdas basjkdhjsa asjkdhkas haskjdhkas sakjdh<br>', '0', NULL, NULL, NULL, 'shgfhs bdsvhfjgd dsgbjfhhsd hasjifhisad hsajkhdas basjkdhjsa asjkdhkas haskjdhkas sakjdh<br>', 1, 0, 0, 0, 'vMhz1birdedu.png'),
+(36, 'sdfihsd sdbjhfgbsd bdshjf', 0, '2014-11-03 08:48:57', 'dskjdhfjds hasbbjhdhasj hashjkdhas basjhdba<br>', '0', NULL, NULL, NULL, 'dskjdhfjds hasbbjhdhasj hashjkdhas basjhdba<br>', 1, 0, 0, 0, 'uxrZH1.jpg'),
+(37, 'dsgjhfds hdsjkfhkjs', 0, '2014-11-03 08:49:20', 'jjshdjfkhhd sdjhfkjsd sdkjhfjksdh<br>', '0', NULL, NULL, NULL, 'jjshdjfkhhd sdjhfkjsd sdkjhfjksdh<br>', 1, 0, 0, 0, 'N2jpot.png'),
+(38, 'sdgds shdjgfjhds asvhja', 0, '2014-11-03 10:12:35', 'shkjdhfjksd bbsadjhfhbkjds dskjfhkdsj sakjdlkas skjdhas bsdkjbfdsaj basbdaskj asbjdbas bsajdba baskj', '0', NULL, NULL, NULL, 'shkjdhfjksd bbsadjhfhbkjds dskjfhkdsj sakjdlkas skjdhas bsdkjbfdsaj basbdaskj asbjdbas bsajdba baskjdnbkj bsajkbdsa asbjkdba bsajkbds sbajkbdaks sabjkdbask basjdba basjkdbd bas contents should be cut off<br>', 1, 0, 0, 0, 'bIr6gf.png');
 
 -- --------------------------------------------------------
 
@@ -401,7 +422,15 @@ CREATE TABLE IF NOT EXISTS `slide` (
   `slide_image` varchar(100) NOT NULL DEFAULT 'Required',
   `slide_content` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `slide`
+--
+
+INSERT INTO `slide` (`id`, `slide_name`, `slide_image`, `slide_content`) VALUES
+(2, 'Birds are our property', '1.jpg', 'They are so lovely and preety'),
+(3, 'another bird', 'logo.JPG', '');
 
 -- --------------------------------------------------------
 

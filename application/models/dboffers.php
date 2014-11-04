@@ -55,15 +55,15 @@ class Dboffers extends CI_Model {
         }
     }
 
-    function add_new_post($post_title, $post_content, $post_summary, $post_status, $image) {
+    function add_new_post($post_title, $post_content, $post_summary, $post_status, $image, $selectCategory) {
        
         $data = array(
             'post_title' => $post_title,
             'post_content' => $post_content,
             'post_summary' => $post_summary,
             'post_status' => $post_status,
-            'image' => $image
-        );
+            'image' => $image,
+            'post_category' => $selectCategory);
         $this->db->insert('post', $data);
     }
 
@@ -86,14 +86,15 @@ class Dboffers extends CI_Model {
 //         $this->db->insert('post', $data);
 //    }
 
-    public function update_post($id, $post_title, $post_content, $post_summary, $image) {
+    public function update_post($id, $post_title, $post_content, $post_summary, $image, $selectCategory) {
         $this->load->database();
         $data = array
             (
             'post_title' => $post_title,
             'post_content' => $post_content,
             'post_summary' => $post_summary,
-            'image' => $image);
+            'image' => $image,
+            'post_category' => $selectCategory);
         $this->db->where('id', $id);
         $this->db->update('post', $data);
     }

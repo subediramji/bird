@@ -1,0 +1,13 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+}
+.full-body-wrapper
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    min-height: 800px;
+    background-color: #2c5772;
+}

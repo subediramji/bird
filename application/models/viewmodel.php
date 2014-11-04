@@ -17,6 +17,33 @@ class Viewmodel extends CI_Model
         $query = $this->db->get();
         return $query->result();  
     }
+     public function get_post_for_introduction()
+    {
+         $this->db->where('post_category', '10');
+        $query = $this->db->get('post');
+        return $query->result(); 
+    }
+    public function get_post_for_birds()
+    {
+         $this->db->where('post_category', '1');
+        $query = $this->db->get('post');
+        return $query->result(); 
+    }
+    public function get_post_for_birds_by_id($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->where('post_category', '1');
+        $query = $this->db->get('post');
+        return $query->result();
+    }
+            function get_event_news(){
+        $this->db->order_by('id', 'DESC');
+        $this->db->where('type', 'news');
+        $this->db->limit(4);
+        $query = $this->db->get("events");
+        return $query->result();
+    }
+    
     
     public function get_max_post_to_show(){
         $this->db->select('description');

@@ -153,17 +153,13 @@ class Events extends CI_Controller {
                         $id = $this->input->post('id');
                         $title = $this->input->post('Name');
                         $content = $this->input->post('description');
-                     
-
-                        $string = $this->input->post('description');
-                        $summary = substr("$string", 0, 100);
                         $location = $this->input->post('location');
                         $date = $this->input->post('date');
                         $hour = $this->input->post('hour');
                         $min = $this->input->post('min');
                         $sec = 0;
                         $dateTime = $date . ' ' . $hour . ':' . $min . ':' . $sec;
-                        $this->dbevent->update_event($id, $title, $content, $summary, $location, $image, $dateTime);
+                        $this->dbevent->update_event($id, $title, $content, $location, $image, $dateTime);
                         $this->session->set_flashdata('message', 'Data Modified Sucessfully');
                         redirect('events/event');
                     }
@@ -174,16 +170,15 @@ class Events extends CI_Controller {
                     $content = $this->input->post('description');
 
                     $image = $this->input->post('hidden_image');
-
-                    $string = $this->input->post('description');
-                    $summary = substr("$string", 0, 100);
+                    
                     $location = $this->input->post('location');
+                    $type = $this->input->post('event_type');
                     $date = $this->input->post('date');
                     $hour = $this->input->post('hour');
                     $min = $this->input->post('min');
                     $sec = 0;
                     $dateTime = $date . ' ' . $hour . ':' . $min . ':' . $sec;
-                    $this->dbevent->update_event($id, $title, $content, $summary, $location, $image, $dateTime);
+                    $this->dbevent->update_event($id, $title, $content, $location, $image, $dateTime, $type);
                     $this->session->set_flashdata('message', 'Data Modified Sucessfully');
                     redirect('events/event');
                 }
@@ -265,13 +260,14 @@ class Events extends CI_Controller {
                          $eventName = $this->input->post('event_name');
                         $detail = $this->input->post('detail');
                         $location = $this->input->post('location');
+                        $type = $this->input->post('event_type');
                         $date = $this->input->post('date');
                         $hour = $this->input->post('hour');
                         $min = $this->input->post('min');
                         $sec = 0;
                         $dateTime = $date . ' ' . $hour . ':' . $min . ':' . $sec;
                       
-                        $this->dbevent->add_event($eventName, $detail, $location, $dateTime, $image);
+                        $this->dbevent->add_event($eventName, $detail, $location, $dateTime, $image, $type);
                         $this->session->set_flashdata('message', 'One event added sucessfully');
                         redirect('events/event');
                     } else {

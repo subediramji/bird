@@ -134,8 +134,8 @@ public function index() {
                         $string = $this->input->post('post_content');
                         $post_summary = substr("$string", 0, 100);
                         $post_status = $this->input->post('post_status');
-
-                        $this->dboffers->add_new_post($post_title, $post_content, $post_summary, $post_status, $image);
+                        $selectCategory = $this->input->post('selectCategory');
+                        $this->dboffers->add_new_post($post_title, $post_content, $post_summary, $post_status, $image, $selectCategory);
                         $this->session->set_flashdata('message', 'One offer added sucessfully');
                         redirect('offers/posts');
                     }
@@ -151,13 +151,10 @@ public function index() {
                     $string = $this->input->post('post_content');
                     $post_summary = substr("$string", 0, 100);
                     $post_status = $this->input->post('post_status');
-                    $post_comment_status = $this->input->post('comment_status');
-                    $post_tags = $this->input->post('post_tags');
-                    // $post_category_info = $this->dbmodel->get_post_category_info($categoryName);
-                    $allowComment = $this->input->post('allow_comment');
-                    $allowLike = $this->input->post('allow_like');
-                    $allowShare = $this->input->post('allow_share');
-                    $this->dboffers->add_new_post($post_title, $post_content, $post_summary, $post_status, $image);
+                    $selectCategory = $this->input->post('selectCategory');
+                   
+                   
+                    $this->dboffers->add_new_post($post_title, $post_content, $post_summary, $post_status, $image, $selectCategory);
                     // $this->dbmodel->add_new_post($post_title, $post_content, $post_author_id, $post_summary, $post_status, $post_comment_status, $post_tags, $post_category_id, $allowComment, $allowLike, $allowShare);
                     $this->session->set_flashdata('message', 'One Offer added sucessfully');
                     redirect('offers/posts');
@@ -302,13 +299,7 @@ public function index() {
                         $id = $this->input->post('id');
                         $post_title = $this->input->post('post_title');
                         $post_content = $this->input->post('post_content');
-                        $data = array('upload_data' => $this->upload->data('file'));
-                        
-                        
-//                        $post_author_info = $this->dbmodel->get_post_author_id($username);
-//                        foreach ($post_author_info as $pid) {
-//                            $post_author_id = $pid->id;
-//                        }
+                       $selectCategory = $this->input->post('selectCategory');
                         $string = $this->input->post('post_content');
                         $post_summary = substr("$string", 0, 100);
 //                        $post_status = $this->input->post('page_status');
@@ -317,7 +308,7 @@ public function index() {
 //                        $allowComment = $this->input->post('allow_comment');
 //                        $allowLike = $this->input->post('allow_like');
 //                        $allowShare = $this->input->post('allow_share');
-                        $this->dboffers->update_post($id, $post_title, $post_content, $post_summary, $image);
+                        $this->dboffers->update_post($id, $post_title, $post_content, $post_summary, $image, $selectCategory);
                         $this->session->set_flashdata('message', 'Data Modified Sucessfully');
                         redirect('offers/posts');
                     }
@@ -332,13 +323,14 @@ public function index() {
                     $string = $this->input->post('post_content');
                     $post_summary = substr("$string", 0, 100);
                     $post_image = $this->input->post('hidden_image');
+                    $selectCategory = $this->input->post('selectCategory');
 //                    $post_status = $this->input->post('page_status');
 //                    $post_comment_status = $this->input->post('comment_status');
 //                    $post_tags = $this->input->post('post_tags');
 //                    $allowComment = $this->input->post('allow_comment');
 //                    $allowLike = $this->input->post('allow_like');
 //                    $allowShare = $this->input->post('allow_share');
-                    $this->dboffers->update_post($id, $post_title, $post_content, $post_summary, $post_image);
+                    $this->dboffers->update_post($id, $post_title, $post_content, $post_summary, $post_image, $selectCategory);
                     $this->session->set_flashdata('message', 'Data Modified Sucessfully');
                     redirect('offers/posts');
                 }

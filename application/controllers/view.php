@@ -16,23 +16,60 @@ public function index()
     $data['gadget'] = $this->model1->get_gaget();  
     $data['headertitle']= $this->viewmodel->get_header_title();
     $data['headerlogo']= $this->viewmodel->get_header_logo();
-         
-       
+    $data['slide'] = $this->viewmodel->get_slider(); 
+    $data['intro'] = $this->viewmodel->get_post_for_introduction();
+    $data["news"] = $this->viewmodel->get_event_news();
+    $data['birds'] = $this->viewmodel->get_post_for_birds();
+
+
          $this->load->view('birdEduSociety/header',$data);
-              
+         $this->load->view('birdEduSociety/slider',$data);
+         $this->load->view('birdEduSociety/introduction',$data);
+         
+         $this->load->view('birdEduSociety/contents',$data);
+         $this->load->view('birdEduSociety/footer', $data);
     }
     
-    public function sucess_story(){
-         $data['postqueryall'] = $this->viewmodel->get_post_all();
-          $data['gadget'] = $this->model1->get_gaget();    
-           $data['headerlogo']= $this->viewmodel->get_header_logo();//for all gadget
-         $this->load->view('central/header',$data);
-               
-                $this->load->view('central/sucess_story',$data);
-                $this->load->view('central/footer');
+    public function birds(){
+         $data['meta'] = $this->dbsetting->get_meta_data();
+    $data['gadget'] = $this->model1->get_gaget();  
+    $data['headertitle']= $this->viewmodel->get_header_title();
+    $data['headerlogo']= $this->viewmodel->get_header_logo();
+    $data['birds'] = $this->viewmodel->get_post_for_birds();
+    
+       $this->load->view('birdEduSociety/header',$data);
+        $this->load->view('birdEduSociety/allBirds', $data);       
+       
+       $this->load->view('birdEduSociety/footer', $data);
+    }
+    public function bird($id)
+    {
+        $data['meta'] = $this->dbsetting->get_meta_data();
+    $data['gadget'] = $this->model1->get_gaget();  
+    $data['headertitle']= $this->viewmodel->get_header_title();
+    $data['headerlogo']= $this->viewmodel->get_header_logo();
+    $data['singleBird'] = $this->viewmodel->get_post_for_birds_by_id($id);
+       $this->load->view('birdEduSociety/header',$data);
+        $this->load->view('birdEduSociety/singleBird', $data);       
+       
+       $this->load->view('birdEduSociety/footer', $data);
     }
 
- public function sucess_story_ajax(){
+    public function contactUs()
+    {
+        $data['meta'] = $this->dbsetting->get_meta_data();
+    $data['gadget'] = $this->model1->get_gaget();  
+    $data['headertitle']= $this->viewmodel->get_header_title();
+    $data['headerlogo']= $this->viewmodel->get_header_logo(); 
+      $this->load->view('birdEduSociety/header',$data);
+        $this->load->view('birdEduSociety/contactForm');       
+       
+       $this->load->view('birdEduSociety/footer', $data);
+    }
+
+    
+
+    public function sucess_story_ajax(){
          //$num = $_POST['nor'];
          //var_dump($num);
       $data['headerlogo']= $this->viewmodel->get_header_logo();

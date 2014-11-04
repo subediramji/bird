@@ -1,8 +1,8 @@
-
- <link rel="stylesheet" type="text/css" href="<?php echo base_url().'content/bnw/styles/imgareaselect-animated.css'; ?>" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().'content/bnw/styles/imgareaselect-animated.css'; ?>" />
  <script type="text/javascript" src="<?php echo base_url().'content/bnw/scripts/jquery.imgareaselect.pack.js'; ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url().'content/bnw/script/script.js'; ?>"></script>
-<div class="rightSide">
+	<script type="text/javascript" src="<?php echo base_url().'content/bnw/scripts/script.js'; ?>"></script>
+        
+        <div class="rightSide">
     <?php 
 if ($query)
     
@@ -43,17 +43,32 @@ if ($query)
   
   </p> 
   <p class="dashuppe-text-all">Image<br />
-      <input id="uploadImage" class="textInput" type="file" name="file" />
+     <input id="uploadImage" class="textInput" type="file" name="file" />
      <!-- hidden inputs -->
 		<input type="hidden" id="x" name="x" />
 		<input type="hidden" id="y" name="y" />
 		<input type="hidden" id="w" name="w" />
 		<input type="hidden" id="h" name="h" /> 
   </p> 
-  <img id="uploadPreview" style="display:none;width:1000px;"/>
+   <img id="uploadPreview" style="display:none;width:1000px;"/>
+  <p class="dashuppe-text-all">Select Category<br/>
+       <select class="textInput" name="selectCategory">
+                <?php
+                foreach ($listOfCategory as $data)
+                {
+                    ?>
+                <option value="<?php echo $data->id; ?>">
+                    <?php echo $data->category_name; ?>
+                </option>
+                    <?php
+                }
+                ?> 
+          
+            </select>
+       
+   </p>
    <input type="submit" class="btn btn-primary btn-lg" value="Submit" />
   <?php echo form_close();?>
- 
     </div>
     
     <div id="forRightPage"> 
@@ -72,41 +87,3 @@ if ($query)
 </div>
 <div class="clear"></div>
 </div>
-
-<!--
-  <p>Post Status:<br />
-  <?php 
- /* $options = array(
-                  '1'  => 'publish',
-                  '0'    => 'draft');
-  echo form_dropdown('post_status',$options,'1')
-  ?>
-  </p>
-   <p>Post Comment Status:<br />
-  <?php 
-  $options = array(
-                '2'=> 'as defined',
-                  '1'  => 'public',
-                  '0'    => 'custom');
-  echo form_dropdown('comment_status',$options,'1')
-  ?>
-  </p>   
-   <p> Post Tags : <br/>
-       <input type="text" name="post_tags" /> </p>
-   
-   <p>Select Category:<br/>
-       <select name="selectCategory">
-                <?php
-                foreach ($listOfCategory as $data)
-                {
-                    ?>
-                <option value="<?php echo $data->category_name; ?>">
-                    <?php echo $data->category_name; ?>
-                </option>
-                    <?php
-                }
-                ?> 
-          
-            </select>
-       
-   </p>--> */ ?>
