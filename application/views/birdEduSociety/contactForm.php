@@ -18,7 +18,75 @@
       <h2>Contact Info</h2><br>
             <div class="map">
           <?php if($map =="showMap"){ ?>  <figure class="img_inner">
-                          <iframe src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Brooklyn,+New+York,+NY,+United+States&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=61.282355,146.513672&amp;ie=UTF8&amp;hq=&amp;hnear=Brooklyn,+Kings,+New+York&amp;ll=40.649974,-73.950005&amp;spn=0.01628,0.025663&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+                          
+    <style>
+      #map_canvas {
+        width: 94%;
+        height: 500px;
+        margin: 0% 3% 0% 3%;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+         var myLatlng = new google.maps.LatLng(27.576281, 84.493833);
+        var map_options = {
+          center: myLatlng,
+          zoom: 14,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(map_canvas, map_options);
+        
+        var contentString = '<div id="content">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h3 id="firstHeading" class="firstHeading"> BES - Nepal</h3>'+
+      '<div id="bodyContent">'+
+      '<p>Sauraha, Chitwan'+
+      '</p>'+
+      '</div>'+
+      '</div>';
+
+ var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'BES - Nepal)'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>     
+ 
+    <div id="location" class="col-sm-6 col-md-12" style="text-align: center; margin: 1% 0% 1% 0%;"><header class="page-header">
+                <h1 style="color:#fff;">Location Map</h1>
+              </header></div>
+<div id="map_canvas"></div>
+<div class="clear"></div>
+<!class full is closed here>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           </figure> <?php } ?>
               <address>
                             <dl>

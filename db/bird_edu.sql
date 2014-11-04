@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 03, 2014 at 11:33 AM
+-- Generation Time: Nov 04, 2014 at 06:01 AM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `contact_address` (
 --
 
 INSERT INTO `contact_address` (`id`, `name`, `address`, `contact_no1`, `contact_no2`, `email`, `show_form`, `show_map`) VALUES
-(1, 'Backbone for Community Development - Nepal', 'Bharatpur Municipality - 10,Bharatpur,Chitwan,Nepal', '009779845054619', '', 'bcdnepal@gmail.com', 'showForm', 'showMap');
+(1, 'Bird Education Society - Nepal', 'Sauraha,Sauraha,Chitwan,Nepal', '056580113', '', 'besnepal@wlink.com.np', 'showForm', 'showMap');
 
 -- --------------------------------------------------------
 
