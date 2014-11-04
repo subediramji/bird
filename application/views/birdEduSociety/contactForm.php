@@ -41,7 +41,7 @@
         var contentString = '<div id="content">'+
       '<div id="siteNotice">'+
       '</div>'+
-      '<h3 id="firstHeading" class="firstHeading"> BES - Nepal</h3>'+
+      '<h3 id="firstHeading" class="firstHeading" style="color:#000;"> BES - Nepal</h3>'+
       '<div id="bodyContent">'+
       '<p>Sauraha, Chitwan'+
       '</p>'+
@@ -83,7 +83,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-
+ 
 
 
 
@@ -103,31 +103,32 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <?php if($form =="showForm"){ ?>
      <div class="grid_5 prefix_1">
        <h2 class="ic1">Contact Form</h2>
-       <form id="form">
+       <?php $attributes = array('id' => 'form'); echo form_open_multipart('email/send', $attributes); ?>
+
        <div class="success_wrapper">
        <div class="success">Contact form submitted!<br>
        <strong>We will be in touch soon.</strong> </div></div>
        <fieldset>
        <label class="name">
-       <input type="text" value="Name:">
+       <input type="text" name="name" value="Name:">
        <br class="clear">
        <span class="error error-empty">*This is not a valid name.</span><span class="empty error-empty">*This field is required.</span> </label>
        <label class="email">
-       <input type="text" value="E-mail:">
+       <input type="text" name="email" value="E-mail:">
        <br class="clear">
        <span class="error error-empty">*This is not a valid email address.</span><span class="empty error-empty">*This field is required.</span> </label>
        <label class="phone">
-       <input type="tel" value="Phone:">
+       <input type="tel" name="phone" value="Phone:">
        <br class="clear">
        <span class="error error-empty">*This is not a valid phone number.</span><span class="empty error-empty">*This field is required.</span> </label>
        <label class="message">
-       <textarea></textarea>
+       <textarea name="message"></textarea>
        <br class="clear">
        <span class="error">*The message is too short.</span> <span class="empty">*This field is required.</span> </label>
        <div class="clear"></div>
        <div class="btns"><a data-type="reset" class="btn">Clear</a><a data-type="submit" class="btn">Send</a>
        <div class="clear"></div>
-       </div></fieldset></form>
+       </div></fieldset><?php echo form_close(); ?>
         
      </div>
       <?php } ?>

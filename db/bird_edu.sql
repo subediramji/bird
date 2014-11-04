@@ -1,26 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.0.4
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Nov 04, 2014 at 06:01 AM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `bird_edu`
---
-CREATE DATABASE IF NOT EXISTS `bird_edu` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `bird_edu`;
 
 -- --------------------------------------------------------
 
