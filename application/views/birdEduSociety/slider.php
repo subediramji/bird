@@ -28,9 +28,9 @@
                 margin:0;
                 padding:0;
                 float:left;
-                width: 1000px;
-               // height: 600px;
-                position: relative;
+                width: 1200px;
+                height: 400px;
+                //position: relative;
             }
             #sliderImage
             {
@@ -119,7 +119,7 @@
     left: 0.1%;
     margin: 0;
     position: relative;
-    top: -390px;
+    top: -300px;
     width: 30px;
     z-index: 9999;
             }
@@ -130,7 +130,7 @@
     float:right;
     margin: 0;
     position: relative;
-    top: -390px;
+    top: -300px;
     width: 30px;
     z-index: 9999;
             }
@@ -144,7 +144,7 @@
             $(document).ready(function() {
                 slider();
                 var currentPosition = 0;
-                var slideWidth = 1000;
+                var slideWidth = 1200;
                 var slides = $('.slide');
                 var numberOfSlides = slides.length;
                 var slideShowInterval;
@@ -231,7 +231,7 @@
                     var ftbl = '<div class="slide">';
                     tbl = '<img src=' +
                         base_url + 'content/uploads/sliderImages/' +
-                        sliderJson[i].slide_image + ' id="sliderImage" width="935" ><div class="slideContents"><h3>' +
+                        sliderJson[i].slide_image + ' id="sliderImage"  ><div class="slideContents"><h3>' +
                         sliderJson[i].slide_name +
                         '</h3><p>' +
                         sliderJson[i].slide_content + '</p> <div class="sliderContent"><div class="contentContainerFooterLeft"><h4>' +
@@ -255,7 +255,9 @@
                         
 
 
-                    </div></div>
+                    </div>
+                    <img src='<?php echo base_url(); ?>content/uploads/basicImages/sl_shadow.png' >
+                </div>
             
             
             </div>
