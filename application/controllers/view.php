@@ -30,7 +30,20 @@ public function index()
          $this->load->view('birdEduSociety/contents',$data);
          $this->load->view('birdEduSociety/footer', $data);
     }
+    function members(){
+          $data['meta'] = $this->dbsetting->get_meta_data();
+    $data['gadget'] = $this->model1->get_gaget();  
+    $data['headertitle']= $this->viewmodel->get_header_title();
+    $data['headerlogo']= $this->viewmodel->get_header_logo();
+    $data['birds'] = $this->viewmodel->get_post_for_birds();
     
+       $this->load->view('birdEduSociety/header',$data);
+        $this->load->view('birdEduSociety/member', $data);       
+       
+       $this->load->view('birdEduSociety/footer', $data);
+    }
+
+
     public function birds(){
          $data['meta'] = $this->dbsetting->get_meta_data();
     $data['gadget'] = $this->model1->get_gaget();  
@@ -309,7 +322,7 @@ public function index()
              parse_str($setting);
             
         }
-        $data['noOfRecentPost'] = $this->viewmodel->recentpost_get_post($post);
+       // $data['noOfRecentPost'] = $this->viewmodel->recentpost_get_post($post);
         
         $this->load->view('birdEduSociety/header',$data);
        // $this->load->view('menuview/menu',$data);
@@ -344,7 +357,7 @@ public function index()
              parse_str($setting);
            
         }
-        $data['noOfRecentPost'] = $this->viewmodel->recentpost_get_post($post);
+       // $data['noOfRecentPost'] = $this->viewmodel->recentpost_get_post($post);
         
         $data['selectedalbumquery'] =  $this->viewmodel->get_selected_album($id);
         

@@ -225,7 +225,7 @@ animation-name: shake;
 }
 .modal-backdrop,
 .modal-backdrop.fade.in {
-  opacity: 0.8;
+  opacity: 0.0;
   filter: alpha(opacity=80);
 }
 .modal {
@@ -406,7 +406,7 @@ foreach ($selectedalbumquery as $data) {
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-       <img id='popImage' data-src="holder.js/300x300" alt="...">
+          <img id='popImage' data-src="holder.js/500x300" alt="..." >
       </div>
     </div>
   </div>
