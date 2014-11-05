@@ -119,7 +119,7 @@
     left: 0.1%;
     margin: 0;
     position: relative;
-    top: -273px;
+    top: -390px;
     width: 30px;
     z-index: 9999;
             }
@@ -130,7 +130,7 @@
     float:right;
     margin: 0;
     position: relative;
-    top: -323px;
+    top: -390px;
     width: 30px;
     z-index: 9999;
             }
@@ -159,10 +159,9 @@
 
                 //set #slidesHolder width equal to the total width of all the slides
                 $('#slidesHolder').css('width', slideWidth * numberOfSlides);
-
-//                $('#slideshow')
-//                .append('<div class="nav" id="leftNav"><h3><<</h3></div>')
-//                .append('<div class="nav" id="rightNav"><h3>>></h3></div>');
+               $('#slideshow')
+                .append('<div class="nav" id="leftNav"><h3><<</h3></div>')
+                .append('<div class="nav" id="rightNav"><h3>>></h3></div>');
 
                 manageNav(currentPosition);
 
@@ -232,9 +231,9 @@
                     var ftbl = '<div class="slide">';
                     tbl = '<img src=' +
                         base_url + 'content/uploads/sliderImages/' +
-                        sliderJson[i].slide_image + ' id="sliderImage" width="935" ><div class="slideContents"><h2>' +
+                        sliderJson[i].slide_image + ' id="sliderImage" width="935" ><div class="slideContents"><h3>' +
                         sliderJson[i].slide_name +
-                        '</h2><p>' +
+                        '</h3><p>' +
                         sliderJson[i].slide_content + '</p> <div class="sliderContent"><div class="contentContainerFooterLeft"><h4>' +
                         '</h4></div></div></div>';
                     var ltbl = '</div>';
