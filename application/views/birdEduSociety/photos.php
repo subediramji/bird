@@ -370,8 +370,8 @@ foreach ($selectedalbumquery as $data) {
     ?>    
 
    
-    
- <div class="col-sm-6 col-md-2" data-toggle="modal" data-target="#mypopup">
+<!--  <div class="col-sm-6 col-md-3" style="min-height:240px;" data-toggle="modal" data-target="#mypopup">  -->
+ <div class="col-sm-6 col-md-3" data-toggle="modal" data-target="#mypopup">
      <div class="thumbnail" style="width: 20%;float: left;margin: 1.5%;padding: 1%; outline: 1px solid #fff;">
     <img class="srcimage" data-value="<?php echo $data->media_name; ?>" name="<?php echo $data->media_type; ?>" src="<?php echo base_url(); ?>content/uploads/images/<?php echo $data->media_type; ?>"  />
 <!--        <div id="imagetitle"> <?php //echo $data->media_name; ?> 
@@ -398,7 +398,7 @@ foreach ($selectedalbumquery as $data) {
 <div class="clear"></div> 
 
 
-<div class="modal fade mypopup" id="mypopup" style="width:auto; height: auto;">
+<div class="modal fade mypopup" id="mypopup">
     <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -406,7 +406,7 @@ foreach ($selectedalbumquery as $data) {
         <h4 class="modal-title"></h4>
       </div>
       <div class="modal-body">
-          <img id='popImage' data-src="holder.js/500x300" alt="..." >
+       <img id='popImage' data-src="holder.js/300x300" alt="..." >
       </div>
     </div>
   </div>
