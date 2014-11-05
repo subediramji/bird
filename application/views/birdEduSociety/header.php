@@ -110,7 +110,7 @@ height: 'auto',
                 $htitle = $title->description;
             }
         } ?>
-        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url().'content/uploads/images/'.$hlogo; ?>" style="width: 80px; float: left;"alt="Bird education society"></a> <h1 style="float: left; padding-top: 27px;"><?php echo $htitle; ?> </h1>
+        <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url().'content/uploads/images/'.$hlogo; ?>" style="width: 80px; float: left;"alt="Bird education society"> <h1 style="float: left; padding-top: 27px;"><?php echo $htitle; ?> </h1></a>
          <div class="menu_block">
            <nav  class="nav" >
             <ul class="nav-list">        

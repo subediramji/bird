@@ -17,10 +17,13 @@ public function index()
     $data['gadget'] = $this->model1->get_gaget();  
     $data['headertitle']= $this->viewmodel->get_header_title();
     $data['headerlogo']= $this->viewmodel->get_header_logo();
-    $data['slide'] = $this->viewmodel->get_slider(); 
+    //$data['slide'] = $this->viewmodel->get_slider(); 
+    $slidequery = $this->viewmodel->get_slider();
+     $slider = json_encode($slidequery);
+        $data["slider_json"] =  $slider;
     $data['intro'] = $this->viewmodel->get_post_for_introduction();
     $data["news"] = $this->viewmodel->get_event_news();
-    $data['birds'] = $this->viewmodel->get_post_for_birds();
+    $data['birds'] = $this->viewmodel->get_post_for_birds_limit();
 
 
          $this->load->view('birdEduSociety/header',$data);
@@ -35,7 +38,7 @@ public function index()
     $data['gadget'] = $this->model1->get_gaget();  
     $data['headertitle']= $this->viewmodel->get_header_title();
     $data['headerlogo']= $this->viewmodel->get_header_logo();
-    $data['birds'] = $this->viewmodel->get_post_for_birds();
+    $data['birds'] = $this->viewmodel->get_post_for_birds_limit();
     
        $this->load->view('birdEduSociety/header',$data);
         $this->load->view('birdEduSociety/member', $data);       
@@ -56,7 +59,7 @@ public function index()
        
        $this->load->view('birdEduSociety/footer', $data);
     }
-    public function bird($id)
+    public function bird($id=NULL)
     {
         $data['meta'] = $this->dbsetting->get_meta_data();
     $data['gadget'] = $this->model1->get_gaget();  
@@ -97,7 +100,7 @@ public function index()
                 $this->load->view('central/footer');
     }
     
-    public function page($id)
+    public function page($id=NULL)
     {
         $nav= $this->uri->uri_string();
         $assc_id= str_replace('view/','', $nav);
@@ -177,7 +180,7 @@ public function index()
         $this->load->view('menuview/footer',$data);  
     }
     
-    public function category($id)
+    public function category($id=NULL)
     {
         $nav= $this->uri->uri_string();
         $assc_id= str_replace('view/','', $nav);
@@ -214,7 +217,7 @@ public function index()
         $this->load->view('menuview/footer',$data);  
         
     }
-    public function post($id)
+    public function post($id=NULL)
     {
         $nav= $this->uri->uri_string();
         $assc_id= str_replace('view/','', $nav);

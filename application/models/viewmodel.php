@@ -25,9 +25,17 @@ class Viewmodel extends CI_Model
         $query = $this->db->get('post');
         return $query->result(); 
     }
+    public function get_post_for_birds_limit()
+    {
+         $this->db->where('post_category', '1');
+         $this->db->order_by('id', 'DESC');
+        $query = $this->db->get('post',10);
+        return $query->result(); 
+    }
     public function get_post_for_birds()
     {
          $this->db->where('post_category', '1');
+         
         $query = $this->db->get('post');
         return $query->result(); 
     }

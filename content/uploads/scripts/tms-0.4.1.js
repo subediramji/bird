@@ -227,7 +227,7 @@
 										,left:0
 										,top:0
 										,zIndex:10
-										,width:holder.width()
+										,width:'1000 px'
 										,height:holder.height()
 										,overflow:'hidden'
 										,opacity:0

@@ -8,18 +8,22 @@
   <div class="clear"></div>
 <ul class="carousel1">
     <?php foreach ($birds as $allbird){
+        $id = $allbird->id;
         $title = $allbird->post_title;
         $image = $allbird->image;
         $content = $allbird->post_summary;
 
         ?>
+    
 	<li class="grid_4">
+             <a href="<?php echo base_url().'index.php/view/bird/'.$id; ?>" >
 		<img src="<?php echo base_url().'content/uploads/images/thumb_'.$image; ?>" alt="" class="img_inner fleft">
 		<div class="extra_wrapper pad1">
-			<p class="col2"><a href="#"><?php echo $title; ?> </a></p><?php echo $content; ?>
+			<p class="col2"><a href="<?php echo base_url().'index.php/view/bird/'.$id; ?>"><?php echo $title; ?> </a></p><?php echo $content; ?>
 		</div>
+                  </a>
 	</li>
-        
+    
     <?php } ?>
 
 </ul>
